@@ -11,8 +11,21 @@
   <p id="resolution"></p>
 
   <script>
-    document.getElementById('screenSize').innerText = `${screen.width} x ${screen.height}`;
-    document.getElementById('resolution').innerText = `${screen.width} x ${screen.height} pixels @ ${screen.pixelDepth} bits per pixel`;
+    function updateScreenInfo() {
+      document.getElementById('screenSize').innerText = `${screen.width} x ${screen.height}`;
+      document.getElementById('resolution').innerText = `${screen.width} x ${screen.height} pixels @ ${screen.pixelDepth} bits per pixel`;
+    }
+
+    // Initial update of screen info
+    updateScreenInfo();
+
+    // Add resize event listener to refresh on screen size change
+    window.addEventListener('resize', function() {
+      // Refresh only if the screen size actually changes
+      if (screen.width !== window.innerWidth || screen.height !== window.innerHeight) {
+        location.reload();
+      }
+    });
   </script>
 </body>
 </html>
