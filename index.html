@@ -1,8 +1,18 @@
-<html>
-  <head>
-    <title>Size test</title>
-  </head>
-  <body>
-    This is test page
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size and Resolution</title>
+</head>
+<body>
+  <h1>Screen Size and Resolution</h1>
+  <p id="screenSize"></p>
+  <p id="resolution"></p>
+
+  <script>
+    document.getElementById('screenSize').innerText = `${screen.width} x ${screen.height}`;
+    document.getElementById('resolution').innerText = `${screen.width} x ${screen.height} pixels @ ${screen.pixelDepth} bits per pixel`;
+  </script>
+</body>
 </html>
